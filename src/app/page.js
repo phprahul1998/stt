@@ -3,7 +3,6 @@ import 'regenerator-runtime/runtime'
 import Image from 'next/image'
 import styles from './page.module.css'
 import React, { useEffect, useState } from 'react';
-import TextAnimation from 'react-text-animations';
 var mediaRecorder; // set mediaRecorder as  an globally accessible
 var audioText;
 const DG_KEY = "86ebe81f93d512a90cd655d04ca5e0985d341cf2";
@@ -97,18 +96,7 @@ export default function Home() {
           <p>{leters.slice(-14, -7).map((i) => i + ' ')}</p>
           <div style={{ display: 'flex', marginTop: '5px' }}>
             <p>{leters.slice(-7, -2).map((i) => i + ' ')}</p>
-            <TextAnimation.Slide
-              target='#'
-              text={last2}
-              animation={{
-                duration: 1000,
-                delay: 2000,
-                timingFunction: 'ease-out',
-              }}
-              // loop={false}
-            >
-              &nbsp;#
-            </TextAnimation.Slide>
+        
           </div>
         </div>
 
