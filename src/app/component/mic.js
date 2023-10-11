@@ -15,10 +15,8 @@ import useSpeechToText from 'react-hook-speech-to-text';
     googleApiKey: 'AIzaSyBYFQzw3V4bDy8nV1IT0euVcEtJ6MzUX4U',
     useLegacyResults: false
   });
-
-
+  // rahul
   if (error){"Web Speech API is not available in this browser"};
-
   return (
     <div>
       <h1>Recording: {isRecording.toString()}</h1>
