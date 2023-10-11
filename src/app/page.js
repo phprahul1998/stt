@@ -40,6 +40,7 @@ export default function Home() {
     }
   };
 
+
   return (
     <div>
       <h1>Speech Recognition with Deepgram</h1>
@@ -47,7 +48,7 @@ export default function Home() {
         {isListening ? 'Stop Listening' : 'Start Listening'}
       </button>
       <div>
-        <p>Transcript: {recognition}</p>
+        <p>Transcript: {transcript}</p>
         {transcript && (
           <h1>send to api</h1>
         )}
