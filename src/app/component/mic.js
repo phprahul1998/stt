@@ -1,36 +1,29 @@
-'use client'
-import React , { useEffect } from 'react';
-import useSpeechToText from 'react-hook-speech-to-text';
- const Mic = () => {
-  const {
-    error,
-    interimResult,
-    isRecording,
-    results,
-    startSpeechToText,
-    stopSpeechToText,
-  } = useSpeechToText({
-    continuous: false,
-    crossBrowser: true,
-    googleApiKey: 'AIzaSyBYFQzw3V4bDy8nV1IT0euVcEtJ6MzUX4U',
-    useLegacyResults: false
-  });
-  // rahul
-  if (error){"Web Speech API is not available in this browser"};
-  return (
-    <div>
-      <h1>Recording: {isRecording.toString()}</h1>
-      <button onClick={isRecording ? stopSpeechToText : startSpeechToText}>
-        {isRecording ? 'Stop Recording' : 'Start Recording'}
-      </button>
-      <ul>
-        {results.map((result) => (
-          <li key={result.timestamp}>{result.transcript}</li>
-        ))}
-        {interimResult && <li>{interimResult}</li>}
-      </ul>
-    </div>
-  );
-}
-export default Mic;
+import React, { Component } from 'react';
 
+class SpeechRecognitionComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.recognition = new webkitSpeechRecognition();
+    this.recognition.continuous = true; // Set your desired options here
+    this.recognition.onresult = this.handleSpeechResult;
+  }
+
+  handleSpeechResult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    console.log('Speech recognized:', transcript);
+  }
+
+  startListening = () => {
+    this.recognition.start();
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.startListening}>Start Listening</button>
+      </div>
+    );
+  }
+}
+
+export default SpeechRecognitionComponent;

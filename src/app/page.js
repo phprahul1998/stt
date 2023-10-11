@@ -1,12 +1,10 @@
 'use client'
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-
 export default function Home() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
-  var recognition = new webkitSpeechRecognition();
-  // recognition.continuous = true;
+  const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+
   useEffect(() => {
     recognition.onresult = function (event) {
       const result = event.results[0][0].transcript;
