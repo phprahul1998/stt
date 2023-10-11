@@ -1,9 +1,13 @@
 'use client'
 import 'regenerator-runtime/runtime'
-import React from 'react';
+import React , { useEffect } from 'react';
 import useSpeechToText from 'react-hook-speech-to-text';
-
-export default function AnyComponent() {
+const Speech = () => {
+  useEffect(() => {
+    // Access the navigator object here
+    const userAgent = navigator.userAgent;
+    console.log(userAgent);
+  }, []);
   const {
     error,
     interimResult,
@@ -18,7 +22,8 @@ export default function AnyComponent() {
     useLegacyResults: false
   });
 
-  if (error) return <p>Web Speech API is not available in this browser 🤷‍</p>;
+
+  if (error){"Web Speech API is not available in this browser"};
 
   return (
     <div>
@@ -35,3 +40,4 @@ export default function AnyComponent() {
     </div>
   );
 }
+export default Speech;
