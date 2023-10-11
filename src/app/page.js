@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Home() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
-  var recognition = new window.webkitSpeechRecognition();
+  var recognition = new webkitSpeechRecognition();
   // recognition.continuous = true;
   useEffect(() => {
     recognition.onresult = function (event) {
