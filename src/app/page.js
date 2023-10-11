@@ -47,7 +47,7 @@ export default function Home() {
         {isListening ? 'Stop Listening' : 'Start Listening'}
       </button>
       <div>
-        <p>Transcript: {transcript}</p>
+        <p>Transcript: {recognition}</p>
         {transcript && (
           <h1>send to api</h1>
         )}
