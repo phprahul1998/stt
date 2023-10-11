@@ -12,6 +12,7 @@
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-speech-to-text": "^0.8.0",
     "react-speech-recognition": "^3.10.0",
     "regenerator-runtime": "^0.14.0"
   },
