@@ -1,5 +1,4 @@
 'use client'
-import 'regenerator-runtime/runtime'
 import React , { useEffect } from 'react';
 import useSpeechToText from 'react-hook-speech-to-text';
  const Mic = () => {
